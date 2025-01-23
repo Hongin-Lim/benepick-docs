@@ -75,16 +75,22 @@
             margin-bottom: 8px;
         }
         .screenshot-placeholder {
-            display: inline-block;
-            width: calc(50% - 20px);  /* 양쪽 여백 고려 */
-            margin: 10px;
-            vertical-align: top;
+        display: inline-block;
+        width: 200px; /* 더 작은 너비 */
+        margin: 10px;
+        }
+
+        .screenshot-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px 0;
         }
 
         .screenshot-placeholder img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
         }
         .contact-info {
             background: #f8f9fa;
@@ -120,12 +126,13 @@
                 <li>Nhấn vào <strong>Xóa tài khoản</strong> ở cuối trang.</li>
                 <li>Đọc kỹ thông tin và xác nhận để hoàn tất yêu cầu xóa tài khoản.</li>
             </ol>
-
-            <div class="screenshot-placeholder">
-                <img src="./images/main_my.png" alt="Màn hình chính">
-            </div>
-            <div class="screenshot-placeholder">
-                <img src="./images/delete_confirm.png" alt="Màn hình xóa tài khoản">
+            <div class="screenshot-container"></div>
+                <div class="screenshot-placeholder">
+                    <img src="./images/main_my.png" alt="Màn hình chính">
+                </div>
+                <div class="screenshot-placeholder">
+                    <img src="./images/delete_confirm.png" alt="Màn hình xóa tài khoản">
+                </div>
             </div>
         </div>
 
@@ -181,12 +188,13 @@
                 <li>화면 하단에 있는 <strong>계정 삭제</strong>를 클릭합니다.</li>
                 <li>계정 삭제 확인 메시지가 표시되면, 안내사항을 숙지한 뒤 요청을 완료합니다.</li>
             </ol>
-
-            <div class="screenshot-placeholder">
-                <img src="./images/main_my.png" alt="앱 메인 화면">
-            </div>
-            <div class="screenshot-placeholder">
-                <img src="./images/delete_confirm.png" alt="계정 삭제 화면">
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    <img src="./images/main_my.png" alt="앱 메인 화면">
+                </div>
+                <div class="screenshot-placeholder">
+                    <img src="./images/delete_confirm.png" alt="계정 삭제 화면">
+                </div>
             </div>
         </div>
 
