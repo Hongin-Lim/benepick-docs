@@ -75,15 +75,16 @@
             margin-bottom: 8px;
         }
         .screenshot-placeholder {
-            max-width: 300px;
-            margin: 20px auto;
+            display: inline-block;
+            width: calc(50% - 20px);  /* 양쪽 여백 고려 */
+            margin: 10px;
+            vertical-align: top;
         }
 
         .screenshot-placeholder img {
             width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .contact-info {
             background: #f8f9fa;
