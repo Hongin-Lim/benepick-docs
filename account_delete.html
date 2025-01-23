@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yêu cầu xóa tài khoản</title>
+    <style>
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .tab-container {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            z-index: 100;
+            margin: -20px -20px 20px -20px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .tab {
+            padding: 10px 20px;
+            border: none;
+            background: #f0f0f0;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .tab.active {
+            background: #2c3e50;
+            color: white;
+        }
+        .content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .content.active {
+            display: block;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 30px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .screenshot-placeholder {
+            max-width: 300px;
+            margin: 20px auto;
+        }
+
+        .screenshot-placeholder img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .contact-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .important {
+            color: #d9534f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab-container">
+        <div class="tabs">
+            <button class="tab active" onclick="switchLanguage('vi')">Tiếng Việt</button>
+            <button class="tab" onclick="switchLanguage('ko')">한국어</button>
+        </div>
+    </div>
+
+    <div id="vi-content" class="content active">
+        <h1>Yêu cầu xóa tài khoản và dữ liệu</h1>
+
+        <div class="section">
+            <p>"<strong>BenePick</strong>" cung cấp quy trình đơn giản để người dùng có thể xóa tài khoản và dữ liệu liên quan. Bạn có thể yêu cầu xóa tài khoản bằng cách làm theo các bước dưới đây:</p>
+        </div>
+
+        <div class="section">
+            <h2>1. Cách yêu cầu xóa tài khoản</h2>
+            <p>Để xóa tài khoản, vui lòng thực hiện theo các bước sau trong ứng dụng:</p>
+            <ol>
+                <li>Truy cập menu <strong>Tài khoản của tôi</strong> từ màn hình chính.</li>
+                <li>Nhấn vào <strong>Xóa tài khoản</strong> ở cuối trang.</li>
+                <li>Đọc kỹ thông tin và xác nhận để hoàn tất yêu cầu xóa tài khoản.</li>
+            </ol>
+
+            <div class="screenshot-placeholder">
+                <img src="images/main_my.png" alt="Màn hình chính">
+            </div>
+            <div class="screenshot-placeholder">
+                <img src="images/delete_confirm.png" alt="Màn hình xóa tài khoản">
+            </div>
+            ; <div class="screenshot-placeholder">Hình 1: Màn hình chính</div>
+            ; <div class="screenshot-placeholder">Hình 2: Màn hình xóa tài khoản</div>
+        </div>
+
+        <div class="section">
+            <h2>2. Các dữ liệu sẽ bị xóa</h2>
+            <p>Khi xóa tài khoản, các dữ liệu sau sẽ bị xóa:</p>
+            <ul>
+                <li>Thông tin cá nhân (email, nickname, ngày sinh, giới tính, khu vực, ảnh đại diện)</li>
+                <li>Thông tin đăng nhập mạng xã hội</li>
+                <li>Thông tin thiết bị (tên model, hệ điều hành, phiên bản ứng dụng, ID thiết bị)</li>
+                <li>Cài đặt thông báo</li>
+            </ul>
+            <p>Lưu ý: Các đánh giá đã viết sẽ được <span class="important">ẩn danh</span> và giữ lại trên hệ thống.</p>
+            <p>Ngoài ra, một số dữ liệu sẽ được <span class="important">lưu trữ theo quy định pháp luật</span> trong một khoảng thời gian nhất định.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. Hỗ trợ khách hàng</h2>
+            <p>Nếu bạn cần hỗ trợ thêm về việc xóa tài khoản, vui lòng liên hệ:</p>
+            <div class="contact-info">
+                <p><strong>Trung tâm hỗ trợ</strong></p>
+                <ul>
+                    <li>Email: benepick365@gmail.com</li>
+                    <li>Điện thoại: +82-107-736-0806, +82-105-178-0201</li>
+                    <li>Thời gian làm việc: Thứ 2 - Thứ 6, 9:00 - 18:00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. Thời gian lưu trữ dữ liệu</h2>
+            <p>Dữ liệu đã xóa không thể khôi phục. Tuy nhiên, theo quy định pháp luật, một số dữ liệu sẽ được lưu trữ trong thời gian sau:</p>
+            <ul>
+                <li>Hồ sơ về hợp đồng hoặc rút đơn: 5 năm</li>
+                <li>Hồ sơ về thanh toán và cung cấp dịch vụ: 5 năm</li>
+                <li>Hồ sơ về khiếu nại hoặc giải quyết tranh chấp: 3 năm</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="ko-content" class="content">
+        <h1>계정 및 데이터 삭제 요청</h1>
+
+        <div class="section">
+            <p>"<strong>BenePick</strong>"은 사용자가 계정 삭제 및 관련 데이터를 삭제할 수 있는 간단한 절차를 제공합니다. 아래 단계를 따라 계정 삭제를 요청할 수 있습니다:</p>
+        </div>
+
+        <div class="section">
+            <h2>1. 계정 삭제 요청 방법</h2>
+            <p>계정 삭제를 요청하려면 앱에서 아래 단계를 따라 진행하세요:</p>
+            <ol>
+                <li>앱 메인 화면에서 <strong>My</strong> 메뉴로 이동합니다.</li>
+                <li>화면 하단에 있는 <strong>계정 삭제</strong>를 클릭합니다.</li>
+                <li>계정 삭제 확인 메시지가 표시되면, 안내사항을 숙지한 뒤 요청을 완료합니다.</li>
+            </ol>
+
+            <div class="screenshot-placeholder">
+                <img src="images/main_my.png" alt="앱 메인 화면">
+            </div>
+            <div class="screenshot-placeholder">
+                <img src="images/delete_confirm.png" alt="계정 삭제 화면">
+            </div>
+            ; <div class="screenshot-placeholder">이미지 1: 앱 메인 화면</div>
+            ; <div class="screenshot-placeholder">이미지 2: 계정 삭제 화면</div>
+        </div>
+
+        <div class="section">
+            <h2>2. 삭제되는 데이터 유형</h2>
+            <p>계정을 삭제하면 다음 데이터가 삭제됩니다:</p>
+            <ul>
+                <li>사용자 프로필 정보 (이메일, 닉네임, 생년월일, 성별, 거주 지역, 프로필 이미지 등)</li>
+                <li>소셜 로그인 관련 정보</li>
+                <li>디바이스 정보 (기기 모델명, 운영체제 종류, 앱 버전, 디바이스 ID 등)</li>
+                <li>알림 설정 정보</li>
+            </ul>
+            <p>단, 사용자가 작성한 리뷰는 삭제되지 않으며 <span class="important">익명 처리</span>되어 계속 유지됩니다.</p>
+            <p>또한, <span class="important">법령에 따라 보관해야 하는 데이터</span>는 관련 규정에 따라 일정 기간 보관됩니다.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. 고객 지원</h2>
+            <p>계정 삭제에 대해 추가적인 도움이 필요하신 경우, 아래 연락처를 통해 문의하세요:</p>
+            <div class="contact-info">
+                <p><strong>고객센터</strong></p>
+                <ul>
+                    <li>이메일: benepick365@gmail.com</li>
+                    <li>전화: +82-107-736-0806, +82-105-178-0201</li>
+                    <li>운영 시간: 평일 오전 9시 ~ 오후 6시</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. 데이터 보관 기간</h2>
+            <p>삭제된 데이터는 복구되지 않으며, 법령에 따라 아래 데이터는 일정 기간 보관됩니다:</p>
+            <ul>
+                <li>계약 및 청약 철회 기록: 5년</li>
+                <li>결제 및 재화 공급 기록: 5년</li>
+                <li>소비자 불만 및 분쟁 처리 기록: 3년</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(lang + '-content').classList.add('active');
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`[onclick="switchLanguage('${lang}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
