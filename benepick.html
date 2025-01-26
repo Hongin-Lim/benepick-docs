@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BenePick - Your Beauty, Greater Benefits</title>
+    <style>
+        :root {
+            --primary-pink: #FF4E78;
+            --dark-gray: #2C3E50;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 0.75rem;
+            object-fit: contain;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .lang-btn.active {
+            color: var(--primary-pink);
+        }
+
+        .hero-section {
+            padding: 8rem 1rem 5rem;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .main-logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            object-fit: contain; /* 이미지 비율 유지 */
+            display: block; /* 이미지 정렬을 위해 */
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: #666;
+            max-width: 32rem;
+        }
+
+        .store-buttons {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 400px;
+        }
+
+        .store-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: #1a1a1a;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .store-btn:hover {
+            background: #333;
+        }
+
+        .features-section {
+            padding: 5rem 1rem;
+            background: var(--light-gray);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        #vi-features, #ko-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            height: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            color: #666;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-section {
+            padding: 5rem 1rem;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 1.5rem;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: #f5f5f5;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .contact-item h3 {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #666;
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-link {
+            color: #999;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        @media (min-width: 768px) {
+            .hero-container {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .hero-content {
+                text-align: left;
+            }
+
+            .main-logo {
+                margin: 0 0 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            #vi-features,
+            #ko-features {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <img src="./images/logo_pink.png" alt="BenePick Logo" class="logo">
+            <div class="language-selector">
+                <button class="lang-btn active" onclick="switchLanguage('vi')">Tiếng Việt</button>
+                <button class="lang-btn" onclick="switchLanguage('ko')">한국어</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content" id="vi-content">
+                <img src="./images/logo_white.png" alt="BenePick Logo" class="main-logo">
+                <h1 class="hero-title">Your Beauty, Greater Benefits</h1>
+                <p class="hero-description">
+                    BenePick không phải là một trang mua sắm, mà là nền tảng làm đẹp nơi bạn có thể khám phá thông tin
+                    đa dạng về mỹ phẩm và nhận nhiều ưu đãi thông qua Points.
+                </p>
+            </div>
+            <div class="hero-content" id="ko-content" style="display: none;">
+                <img src="https://hongin-lim.github.io/benepick-docs/images/logo_white.png">
+                <!-- <img src="./images/logo_white.png" alt="BenePick Logo" class="main-logo"> -->
+                <h1 class="hero-title">당신의 뷰티, 더 큰 혜택으로</h1>
+                <p class="hero-description">
+                    BenePick은 쇼핑몰이 아닌, 다양한 화장품 정보를 탐색하고 포인트로 혜택을 받을 수 있는 뷰티 플랫폼입니다.
+                </p>
+            </div>
+            <div class="store-buttons">
+                <a href="#" class="store-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                    </svg>
+                    <div>
+                        <div style="font-size: 0.75rem;">Download on the</div>
+                        <div style="font-size: 0.875rem; font-weight: 600;">App Store</div>
+                    </div>
+                </a>
+                <a href="#" class="store-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                    </svg>
+                    <div>
+                        <div style="font-size: 0.75rem;">Get it on</div>
+                        <div style="font-size: 0.875rem; font-weight: 600;">Google Play</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="features-grid">
+            <!-- Vietnamese Features -->
+            <div id="vi-features">
+                <div class="feature-card">
+                    <h2 class="feature-title">Đánh giá & Thông tin</h2>
+                    <ul class="feature-list">
+                        <li>• Khám phá những đánh giá chân thực và thông tin chi tiết về hàng loạt mỹ phẩm.</li>
+                        <li>• Tự tin dùng mỹ phẩm mới với cách sử dụng cơ bản</li>
+                        <li>• Từ đánh giá sản phẩm đến mẹo sử dụng thực tế, tất cả đều có tại một nơi.</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h2 class="feature-title">Tích Points & Ưu đãi</h2>
+                    <ul class="feature-list">
+                        <li>• Càng hoạt động, càng nhiều Points!</li>
+                        <li>• Đổi Points lấy mỹ phẩm miễn phí.</li>
+                        <li>• Tìm kiếm và so sánh sản phẩm, danh mục, xếp hạng phổ biến một cách nhanh chóng.</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h2 class="feature-title">Dành cho bạn</h2>
+                    <ul class="feature-list">
+                        <li>• Những người muốn thử mỹ phẩm mới nhưng cần thông tin đáng tin cậy.</li>
+                        <li>• Những ai đã có mỹ phẩm nhưng muốn tìm hiểu cách sử dụng đúng cách.</li>
+                        <li>• Những người muốn tham gia thử thách, tích Points để nhận mỹ phẩm miễn phí.</li>
+                        <li>• Các tín đồ làm đẹp muốn chia sẻ đánh giá mỹ phẩm và nhận phần thưởng.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Korean Features -->
+            <div id="ko-features" style="display: none;">
+                <div class="feature-card">
+                    <h2 class="feature-title">리뷰 & 정보</h2>
+                    <ul class="feature-list">
+                        <li>• 수많은 화장품에 대한 솔직한 리뷰와 상세한 정보를 확인하세요.</li>
+                        <li>• 처음 사용하는 화장품도 걱정 없이, 사용방법을 함께 확인하세요.</li>
+                        <li>• 제품 리뷰부터 실제 사용팁까지 한곳에서 확인해보세요.</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h2 class="feature-title">Points & 혜택</h2>
+                    <ul class="feature-list">
+                        <li>• 활동할수록 포인트가 쌓입니다!</li>
+                        <li>• 적립한 포인트로 화장품을 무료로 받아보세요.</li>
+                        <li>• 원하는 제품, 카테고리, 인기 순위를 간편하게 검색하고 정보를 비교할 수 있습니다.</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h2 class="feature-title">추천 대상</h2>
+                    <ul class="feature-list">
+                        <li>• 새로운 화장품을 시도해보고 싶지만, 믿을만한 정보를 찾는 분</li>
+                        <li>• 화장품은 있지만 제대로 된 사용법을 알고 싶은 분</li>
+                        <li>• 다양한 챌린지를 통해 포인트를 모아 무료로 화장품을 받아보고 싶은 분</li>
+                        <li>• 화장품 리뷰를 공유하며 보상을 받고 싶은 뷰티 애호가</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-card">
+                <h2 class="contact-title" id="vi-contact">Hỗ trợ khách hàng</h2>
+                <h2 class="contact-title" id="ko-contact" style="display: none;">고객 문의</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 id="vi-email">Email hỗ trợ</h3>
+                        <h3 id="ko-email" style="display: none;">이메일 문의</h3>
+                        <p>benepick365@gmail.com</p>
+                        <p class="text-sm" id="vi-response">Thời gian phản hồi: Trong vòng 24 giờ làm việc</p>
+                        <p class="text-sm" id="ko-response" style="display: none;">답변 소요시간: 영업일 기준 24시간 이내</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 id="vi-hours">Giờ làm việc</h3>
+                        <h3 id="ko-hours" style="display: none;">운영시간</h3>
+                        <p>T2-T6, 9:00 - 18:00</p>
+                        <p class="text-sm" id="vi-hours-note">(Nghỉ T7, CN và các ngày lễ)</p>
+                        <p class="text-sm" id="ko-hours-note" style="display: none;">(주말 및 공휴일 휴무)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://hongin-lim.github.io/benepick-docs/" class="footer-link" id="vi-privacy">Chính sách bảo
+                    mật</a>
+                <a href="https://hongin-lim.github.io/benepick-docs/" class="footer-link" id="ko-privacy"
+                    style="display: none;">개인정보처리방침</a>
+                <a href="https://hongin-lim.github.io/benepick-docs/service-terms.html" class="footer-link"
+                    id="vi-terms">Điều khoản dịch vụ</a>
+                <a href="https://hongin-lim.github.io/benepick-docs/service-terms.html" class="footer-link"
+                    id="ko-terms" style="display: none;">서비스 이용약관</a>
+                <a href="https://hongin-lim.github.io/benepick-docs/account-delete.html" class="footer-link"
+                    id="vi-delete">Hướng dẫn xóa tài khoản</a>
+                <a href="https://hongin-lim.github.io/benepick-docs/account-delete.html" class="footer-link"
+                    id="ko-delete" style="display: none;">계정 삭제 가이드</a>
+            </div>
+            <p class="copyright">© 2024 BenePick. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchLanguage(lang) {
+            // features 섹션 처리
+            document.getElementById('vi-features').style.display = lang === 'vi' ? 'grid' : 'none';
+            document.getElementById('ko-features').style.display = lang === 'ko' ? 'grid' : 'none';
+            
+            // 다른 요소들 처리
+            const elements = {
+                'vi': document.querySelectorAll('[id^="vi-"]'),
+                'ko': document.querySelectorAll('[id^="ko-"]')
+            };
+            
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(lang)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            for (let language in elements) {
+                elements[language].forEach(el => {
+                    if (!el.id.includes('features')) {
+                        el.style.display = language === lang ? 'block' : 'none';
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
